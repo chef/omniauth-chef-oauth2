@@ -12,11 +12,9 @@ Gem::Specification.new do |spec|
   spec.description   = %q{OmniAuth OAuth2 strategy for Chef.}
   spec.homepage      = "https://github.com/opscode/omniauth-chef-oauth2"
 
-  spec.files  = %w(.gitignore omniauth-chef-oauth2.gemspec Gemfile Rakefile)
-  spec.files += Dir.glob 'lib/**/*.rb'
-  spec.files += Dir.glob 'bin/**/*'
-  spec.test_files = Dir.glob 'spec/**/*.rb'
-  spec.require_paths = Dir.glob 'lib/**/*.rb'
+  spec.files         = `git ls-files`.split("\n")
+  spec.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  spec.require_paths = ["lib"]
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rack-test'
