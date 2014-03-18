@@ -1,6 +1,8 @@
 $:.unshift File.expand_path '..', __FILE__
 $:.unshift File.expand_path '../../lib', __FILE__
 
+Dir[File.expand_path('../support/**/*', __FILE__)].each { |f| require f }
+
 require 'omniauth'
 require 'omniauth-chef-oauth2'
 require 'rack/test'
@@ -11,6 +13,6 @@ RSpec.configure do |configuration|
   configuration.include Rack::Test::Methods
 
   configuration.expect_with :rspec do |rspec_configuration|
-    rspec_configuration.syntax = :expect
+    rspec_configuration.syntax = :should
   end
 end
