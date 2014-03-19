@@ -13,6 +13,6 @@ RSpec.configure do |configuration|
   configuration.include Rack::Test::Methods
 
   configuration.expect_with :rspec do |rspec_configuration|
-    rspec_configuration.syntax = :should
+    rspec_configuration.syntax = :expect
   end
 end
