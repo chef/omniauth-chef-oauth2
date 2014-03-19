@@ -1,6 +1,6 @@
-# OmniAuth::Chef::OAuth2
+# omniauth-chef-oauth2
 
-TODO: Write a gem description
+An OmniAuth OAuth2 strategy for Chef.
 
 ## Installation
 
@@ -10,11 +10,7 @@ Add this line to your application's Gemfile:
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install omniauth-chef-oauth2
+    $ bundle install
 
 ## Usage
 

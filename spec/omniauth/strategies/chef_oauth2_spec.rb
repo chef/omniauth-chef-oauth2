@@ -2,10 +2,29 @@
 require 'spec_helper'
 
 describe OmniAuth::Strategies::ChefOAuth2 do
-  subject { OmniAuth::Strategies::ChefOAuth2.new(nil) }
+
+  subject do
+    OmniAuth::Strategies::ChefOAuth2.new(nil, @options || {}).tap do |strategy|
+      strategy.stub(:request) { @request }
+    end
+  end
 
   it 'should camelize properly' do
     expect(OmniAuth::Utils.camelize('chef_oauth2')).to eq('ChefOAuth2')
   end
+
+  it 'should have the correct default site' do
+    expect(subject.options.client_options.site).to eq("https://api.opscode.com")
+  end
+
+  it 'should have the correct default authorize url' do
+    expect(subject.options.client_options.authorize_url).to eq('/oauth/authorize')
+  end
+
+  it 'should have the correct default token url' do
+    expect(subject.options.client_options.token_url).to eq('/oauth/token')
+  end
+
+  it_should_behave_like 'an oauth2 strategy'
 
 end

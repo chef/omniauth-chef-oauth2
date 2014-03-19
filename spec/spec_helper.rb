@@ -1,6 +1,8 @@
 $:.unshift File.expand_path '..', __FILE__
 $:.unshift File.expand_path '../../lib', __FILE__
 
+Dir[File.expand_path('../support/**/*', __FILE__)].each { |f| require f }
+
 require 'omniauth'
 require 'omniauth-chef-oauth2'
 require 'rack/test'
