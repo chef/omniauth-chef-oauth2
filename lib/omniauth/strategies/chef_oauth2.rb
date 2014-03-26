@@ -8,8 +8,8 @@ module OmniAuth
 
       option :client_options, {
         site:           'https://api.opscode.com',
-        authorize_url:  '/oauth/authorize',
-        token_url:      '/oauth/token'
+        authorize_url:  '/id/oauth/authorize',
+        token_url:      '/id/oauth/token'
       }
 
       uid do
@@ -27,7 +27,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/api/v1/me').parsed
+        @raw_info ||= access_token.get('/id/v1/me').parsed
       end
 
     end
