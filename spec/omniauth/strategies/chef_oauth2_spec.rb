@@ -18,11 +18,11 @@ describe OmniAuth::Strategies::ChefOAuth2 do
   end
 
   it 'should have the correct default authorize url' do
-    expect(subject.options.client_options.authorize_url).to eq('/oauth/authorize')
+    expect(subject.options.client_options.authorize_url).to eq('/id/oauth/authorize')
   end
 
   it 'should have the correct default token url' do
-    expect(subject.options.client_options.token_url).to eq('/oauth/token')
+    expect(subject.options.client_options.token_url).to eq('/id/oauth/token')
   end
 
   it_should_behave_like 'an oauth2 strategy'
