@@ -14,7 +14,7 @@ describe OmniAuth::Strategies::ChefOAuth2 do
   end
 
   it 'should have the correct default site' do
-    expect(subject.options.client_options.site).to eq("https://api.opscode.com")
+    expect(subject.options.client_options.site).to eq("https://id.opscode.com")
   end
 
   it 'should have the correct default authorize url' do
