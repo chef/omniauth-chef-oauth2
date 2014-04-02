@@ -7,7 +7,7 @@ module OmniAuth
       option :name, 'chef_oauth2'
 
       option :client_options, {
-        site:           'https://api.opscode.com',
+        site:           'https://id.opscode.com',
         authorize_url:  '/id/oauth/authorize',
         token_url:      '/id/oauth/token'
       }
