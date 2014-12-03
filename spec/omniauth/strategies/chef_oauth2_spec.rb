@@ -5,7 +5,7 @@ describe OmniAuth::Strategies::ChefOAuth2 do
 
   subject do
     OmniAuth::Strategies::ChefOAuth2.new(nil, @options || {}).tap do |strategy|
-      strategy.stub(:request) { @request }
+      allow(strategy).to receive(:request) { @request }
     end
   end
 
@@ -14,7 +14,7 @@ describe OmniAuth::Strategies::ChefOAuth2 do
   end
 
   it 'should have the correct default site' do
-    expect(subject.options.client_options.site).to eq("https://id.opscode.com")
+    expect(subject.options.client_options.site).to eq("https://id.chef.io")
   end
 
   it 'should have the correct default authorize url' do
