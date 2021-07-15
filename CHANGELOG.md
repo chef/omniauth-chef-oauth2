@@ -1,5 +1,13 @@
 # omniauth-chef-oauth2 Changelog
 
+<!-- latest_release -->
+<!-- latest_release -->
+
+<!-- release_rollup -->
+<!-- release_rollup -->
+
+<!-- latest_stable_release -->
+<!-- latest_stable_release -->
 ## 1.0.3 (2014-12-04)
 
 * Add a changelog
